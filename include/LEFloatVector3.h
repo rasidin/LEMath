@@ -20,8 +20,8 @@ namespace LEMath {
         inline float Y() const { return y; }
 
         FloatVector3& SetX(float X) { x = X; return *this; }
-        FloatVector3& SetY(float X) { y = Y; return *this; }
-        FloatVector3& SetZ(float X) { z = Z; return *this; }
+        FloatVector3& SetY(float Y) { y = Y; return *this; }
+        FloatVector3& SetZ(float Z) { z = Z; return *this; }
     };
     typedef FloatVector3 FloatColorRGB;
 }
