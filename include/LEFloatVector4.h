@@ -16,6 +16,7 @@ namespace LEMath {
 
 		union {
 			struct { float x, y, z, w; };
+			struct { float r, g, b, a; };
 		};
 	public:
 		// Constructor
@@ -173,4 +174,5 @@ namespace LEMath {
 		static const FloatVector4 Zero;
 		static const FloatVector4 One;
 	};
+	typedef FloatVector4 FloatColorRGBA;
 }
