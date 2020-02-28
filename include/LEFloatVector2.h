@@ -24,4 +24,5 @@ namespace LEMath {
         FloatVector2& SetX(float X) { x = X; return *this; }
         FloatVector2& SetY(float Y) { y = Y; return *this; }
     };
+    typedef FloatVector2 FloatPoint;
 }

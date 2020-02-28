@@ -17,8 +17,12 @@ namespace LEMath {
 
 		int X() const { return x; }
 		int Y() const { return y; }
+        int Width() const { return width; }
+        int Height() const { return height; }
 		void SetX(int X) { x = X; }
 		void SetY(int Y) { y = Y; }
+        void SetWidth(int Width) { width = Width; }
+        void SetHeight(int Height) { height = Height; }
 	};
 	typedef IntVector2 IntSize;
 }
