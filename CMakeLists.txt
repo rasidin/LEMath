@@ -7,3 +7,7 @@ option(USE_TEST "Use gtest" OFF)
 if(USE_TEST)
 	add_subdirectory(test)
 endif()
+
+install(TARGETS LEMath
+		ARCHIVE DESTINATION ${CMAKE_INSTALL_PREFIX}/lib
+		LIBRARY DESTINATION ${CMAKE_INSTALL_PREFIX}/lib)
