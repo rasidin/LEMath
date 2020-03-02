@@ -29,7 +29,11 @@ namespace LEMath {
 		inline float Y() const { return y; }
 		inline float Z() const { return z; }
 		inline float W() const { return w; }
-		
+        inline float Red() const { return x; }
+        inline float Green() const { return y; }
+        inline float Blue() const { return z; }
+        inline float Alpha() const { return w; }
+
 		// Interface
 		FloatVector4& SetX(float X) { x = X; return *this; }
 		FloatVector4& SetY(float Y) { y = Y; return *this; }

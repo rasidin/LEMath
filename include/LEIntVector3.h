@@ -18,7 +18,21 @@ namespace LEMath {
 	public:
 		IntVector3() : x(0), y(0), z(0) {}
 		IntVector3(int _x, int _y, int _z) : x(_x), y(_y), z(_z) {}
-		
+
+        int X() const { return x; }
+        int Y() const { return y; }
+        int Z() const { return z; }
+        int Width() const { return x; }
+        int Height() const { return y; }
+        int Depth() const { return z; }
+
+        void SetX(int X) { x = X; }
+        void SetY(int Y) { y = Y; }
+        void SetZ(int Z) { z = Z; }
+        void SetWidth(int Width) { x = Width; }
+        void SetHeight(int Height) { y = Height; }
+        void SetDepth(int Depth) { z = Depth; }
+
 		// Operators
 		IntVector3 operator + (const IntVector3 &In) const {
 			return IntVector3(x + In.x, y + In.y, z + In.z);
@@ -40,4 +54,5 @@ namespace LEMath {
 			return x == In.x && y == In.y && z == In.z;
 		}
 	};
+    typedef IntVector3 IntSize3;
 }
