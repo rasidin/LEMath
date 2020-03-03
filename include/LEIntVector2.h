@@ -16,9 +16,7 @@ namespace LEMath {
 		IntVector2(int In) : x(In), y(In) {}
 		IntVector2(int X, int Y) : x(X), y(Y) {}
         IntVector2(const DataContainer &In) {
-            if (In.IsValid()) {
-                if ()
-            }
+            In.ToIntVector2(this);
         }
 
 		int X() const { return x; }

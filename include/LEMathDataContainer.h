@@ -16,7 +16,7 @@ namespace LEMath {
         friend FloatVector4;
 
         union {
-            struct { int32 iData[4]; };
+            struct { int iData[4]; };
             struct { float fData[4]; };
         };
         enum class DataType {
@@ -28,7 +28,7 @@ namespace LEMath {
 
         bool IsValid() const { return Type != DataType::Unknown && DataCount > 0; }
 
-        int operator[](int Index) const {
+        int GetIntValue(int Index) const {
             if (IsValid() == false || Index >= DataCount) return 0;
             if (Type == DataType::Integer) {
                 return iData[Index];
@@ -37,7 +37,7 @@ namespace LEMath {
                 return static_cast<int>(fData[Index]);
             }
         }
-        float operator[](int Index) const {
+        float GetFloatValue(int Index) const {
             if (IsValid() == false || Index >= DataCount) return 0.0f;
             if (Type == DataType::Integer) {
                 return static_cast<float>(iData[Index]);
@@ -47,11 +47,11 @@ namespace LEMath {
             }
         }
 
-        bool ToIntVector2(IntVector2 *Output);
-        bool ToIntVector3(IntVector3 *Output);
-        bool ToIntVector4(IntVector4 *Output);
-        bool ToFloatVector2(FloatVector2 *Output);
-        bool ToFloatVector3(FloatVector3 *Output);
-        bool ToFloatVector4(FloatVector4 *Output);
+        bool ToIntVector2(IntVector2 *Output) const;
+        bool ToIntVector3(IntVector3 *Output) const;
+        bool ToIntVector4(IntVector4 *Output) const;
+        bool ToFloatVector2(FloatVector2 *Output) const;
+        bool ToFloatVector3(FloatVector3 *Output) const;
+        bool ToFloatVector4(FloatVector4 *Output) const;
     };
 }
