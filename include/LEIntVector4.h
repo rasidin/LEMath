@@ -39,6 +39,9 @@ namespace LEMath {
 		IntVector4 operator + (const IntVector4 &In) const {
 			return IntVector4(x + In.x, y + In.y, z + In.z, w + In.w);
 		}
+        IntVector4 operator + (int In) const {
+            return IntVector4(x + In, y + In, z + In, w + In);
+        }
 		IntVector4 operator - (const IntVector4 &In) const {
 			return IntVector4(x - In.x, y - In.y, z - In.z, w - In.w);
 		}
@@ -49,6 +52,9 @@ namespace LEMath {
 			LEMATH_ASSERT(In.x != 0 && In.y != 0 && In.z != 0 && In.w != 0);
 			return IntVector4(x / In.x, y / In.y, z / In.z, w / In.w);
 		}
+        IntVector4 operator % (const IntVector4 &In) const {
+            return IntVector4(x % In.x, y % In.y, z % In.z, w % In.w);
+        }
 		int operator | (const IntVector4 &In) const {
 			return x * In.x + y * In.y + z * In.z + w * In.w;
 		}

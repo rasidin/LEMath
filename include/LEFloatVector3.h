@@ -18,6 +18,7 @@ namespace LEMath {
 
         inline float X() const { return x; }
         inline float Y() const { return y; }
+        inline float Z() const { return z; }
 
         FloatVector3& SetX(float X) { x = X; return *this; }
         FloatVector3& SetY(float Y) { y = Y; return *this; }

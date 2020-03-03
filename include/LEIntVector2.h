@@ -28,6 +28,8 @@ namespace LEMath {
         void SetWidth(int Width) { width = Width; }
         void SetHeight(int Height) { height = Height; }
 
+        int Size() const { return x*y; }
+
         static const IntVector2 Zero;
         static const IntVector2 One;
     };
