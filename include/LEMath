@@ -1,0 +1,21 @@
+// ===========================================================
+// LEMath
+// @brief prototypes
+// @author minseob
+#include "LEMathCommon.h"
+#include "LEMathPlatform.h"
+
+#pragma once
+namespace LEMath {
+	struct DataContainer;
+	class IntVector2;
+	class IntVector3;
+	class IntVector4;
+	class FloatVector2;
+	class FloatVector3;
+	class FloatVector4;
+
+	typedef IntVector2 IntSize;
+	typedef IntVector3 IntSize3;
+	typedef IntVector4 IntRect;
+}

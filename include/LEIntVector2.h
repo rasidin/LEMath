@@ -4,6 +4,7 @@
 // @author minseob
 #pragma once
 
+#include "LEMathDataContainer.h"
 namespace LEMath {
 	class IntVector2 {
 		union {
@@ -14,6 +15,11 @@ namespace LEMath {
 		IntVector2() : x(0), y(0) {}
 		IntVector2(int In) : x(In), y(In) {}
 		IntVector2(int X, int Y) : x(X), y(Y) {}
+        IntVector2(const DataContainer &In) {
+            if (In.IsValid()) {
+                if ()
+            }
+        }
 
 		int X() const { return x; }
 		int Y() const { return y; }
@@ -27,5 +33,4 @@ namespace LEMath {
         static const IntVector2 Zero;
         static const IntVector2 One;
     };
-	typedef IntVector2 IntSize;
 }
