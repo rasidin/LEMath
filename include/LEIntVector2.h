@@ -23,6 +23,9 @@ namespace LEMath {
 		void SetY(int Y) { y = Y; }
         void SetWidth(int Width) { width = Width; }
         void SetHeight(int Height) { height = Height; }
-	};
+
+        static const IntVector2 Zero;
+        static const IntVector2 One;
+    };
 	typedef IntVector2 IntSize;
 }
