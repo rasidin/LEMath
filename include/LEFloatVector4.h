@@ -8,6 +8,7 @@
 #include <iostream>
 
 #include "LEMathPlatform.h"
+#include "LEMathDataContainer.h"
 
 namespace LEMath {
 	class FloatVector4 
