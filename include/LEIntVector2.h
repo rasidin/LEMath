@@ -30,7 +30,20 @@ namespace LEMath {
 
         int Size() const { return x*y; }
 
+        operator DataContainer() const {
+            DataContainer output;
+
+            output.Type = DataContainer::DataType::Integer;
+            output.iData[0] = x;
+            output.iData[1] = y;
+            output.DataCount = 2;
+
+            return output;
+        }
+
         static const IntVector2 Zero;
         static const IntVector2 One;
     };
+    typedef IntVector2 IntSize;
+    typedef IntVector2 IntPoint;
 }
