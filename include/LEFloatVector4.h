@@ -23,7 +23,10 @@ namespace LEMath {
 		FloatVector4() : x(0.0f), y(0.0f), z(0.0f), w(0.0f) {}
 		FloatVector4(float In) : x(In), y(In), z(In), w(In) {}
 		FloatVector4(float X, float Y, float Z, float W) : x(X), y(Y), z(Z), w(W) {}
-		
+        FloatVector4(const DataContainer &In) : x(0.0f), y(0.0f), z(0.0f), w(0.0f) {
+            In.ToFloatVector4(this);
+        }
+
 		// Properties
 		inline float X() const { return x; }
 		inline float Y() const { return y; }
