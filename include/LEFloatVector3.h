@@ -28,6 +28,7 @@ namespace LEMath {
         operator DataContainer() const {
             DataContainer output;
 
+            output.Type = DataContainer::DataType::Float;
             output.DataCount = 3;
             output.fData[0] = x;
             output.fData[1] = y;
