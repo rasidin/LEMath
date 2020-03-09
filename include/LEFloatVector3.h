@@ -45,7 +45,7 @@ namespace LEMath {
 
         // Caclulator (static)
         static FloatVector3 CrossProduct(const FloatVector3 &A, const FloatVector3 &B) {
-            return FloatVector3(A.Y() * B.Z() - A.Z() * B.Y(), A.Z() * B.X() - A.X() * B.Z(), A.X() * B.Y() - A.Y() * B.X(), 0.0f);
+            return FloatVector3(A.Y() * B.Z() - A.Z() * B.Y(), A.Z() * B.X() - A.X() * B.Z(), A.X() * B.Y() - A.Y() * B.X());
         }
         static float DotProduct(const FloatVector3 &A, const FloatVector3 &B) {
             return A.X() * B.X() + A.Y() * B.Y() + A.Z() * B.Z();
