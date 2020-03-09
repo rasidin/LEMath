@@ -19,6 +19,9 @@ namespace LEMath {
 	public:
 		IntVector3() : x(0), y(0), z(0) {}
 		IntVector3(int _x, int _y, int _z) : x(_x), y(_y), z(_z) {}
+		IntVector3(const DataContainer &In) : x(0), y(0), z(0) {
+			In.ToIntVector3(this);
+		}
 
         DataContainer XY() const { DataContainer output; output.Type = DataContainer::DataType::Integer; output.iData[0] = x; output.iData[1] = y; output.DataCount = 2; return output; }
         DataContainer YZ() const { DataContainer output; output.Type = DataContainer::DataType::Integer; output.iData[0] = y; output.iData[1] = z; output.DataCount = 2; return output; }
@@ -59,15 +62,18 @@ namespace LEMath {
 			return x == In.x && y == In.y && z == In.z;
 		}
         operator DataContainer() const {
-            DataContainer output;
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}
+	private:
+		DataContainer& GenerateDataContainer(DataContainer &Output) const {
+            Output.DataCount = 3;
+            Output.Type = DataContainer::DataType::Integer;
+            Output.iData[0] = x;
+            Output.iData[1] = y;
+            Output.iData[2] = z;
 
-            output.Type = output.Type = DataContainer::DataType::Integer;
-            output.iData[0] = x;
-            output.iData[1] = y;
-            output.iData[2] = z;
-            output.DataCount = 3;
-
-            return output;
+            return Output;
         }
 	};
 }

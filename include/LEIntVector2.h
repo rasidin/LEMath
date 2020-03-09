@@ -30,6 +30,30 @@ namespace LEMath {
 
         int Size() const { return x*y; }
 
+		// Casters
+		DataContainer ToIntVector3() const {
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}
+		DataContainer ToIntVector4() const {
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}
+		DataContainer ToFloatVector2() const {
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}
+		DataContainer ToFloatVector3() const {
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}
+		DataContainer ToFloatVector4() const {
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}
+
+		// Operators
+		bool operator == (const IntVector2 &In) const { return In.X() == x && In.Y() == y; }
         operator DataContainer() const {
             DataContainer output;
 
@@ -43,6 +67,15 @@ namespace LEMath {
 
         static const IntVector2 Zero;
         static const IntVector2 One;
+	private:
+		DataContainer& GenerateDataContainer(DataContainer &Output) const {
+			Output.DataCount = 2;
+			Output.Type = DataContainer::DataType::Integer;
+			Output.iData[0] = x;
+			Output.iData[0] = y;
+			
+			return Output;
+		}
     };
     typedef IntVector2 IntSize;
     typedef IntVector2 IntPoint;

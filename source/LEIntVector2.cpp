@@ -10,7 +10,7 @@ namespace LEMath {
 
     bool DataContainer::ToIntVector2(IntVector2 *Output) const {
         if (!Output || !IsValid()) return false;
-        Output->x = GetIntValue(0);
-        Output->y = GetIntValue(1);
+        Output->SetX(GetIntValue(0));
+        Output->SetY(GetIntValue(1));
     }
 }

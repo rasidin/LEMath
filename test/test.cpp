@@ -1,8 +1,11 @@
 #include "gtest/gtest.h"
 
 #include "LEMathCommon.h"
+#include "LEFloatVector2.h"
+#include "LEFloatVector3.h"
 #include "LEFloatVector4.h"
 #include "LEQuaternion.h"
+#include "LEIntVector2.h"
 #include "LEIntVector3.h"
 #include "LEIntVector4.h"
 #include "LEFloatMatrix4x4.h"
@@ -32,7 +35,6 @@
 	EXPECT_NEAR(a.W(), b.W(), 1.0e-06);
 
 class testLEMath : public ::testing::Test{};
-
 TEST_F(testLEMath, FloatVector4) {
 	LEMath::FloatVector4 testFloatVector4_0(1.0f, 2.0f, 4.0f, 8.0f);
 	LEMath::FloatVector4 testFloatVector4_1(2.0f, 4.0f, 8.0f, 1.0f);
@@ -48,6 +50,18 @@ TEST_F(testLEMath, FloatVector4) {
 	float resultLength = sqrtf(1.0f + 4.0f + 16.0f + 64.0f);
 	LEMath::FloatVector4 resultNormalize(1.0f / resultLength, 2.0f / resultLength, 4.0f / resultLength, 8.0f / resultLength);
 	
+	LEMath::FloatVector2 castResultFloatVector2(1.0f, 2.0f);
+	LEMath::FloatVector3 castResultFloatVector3(1.0f, 2.0f, 4.0f);
+	LEMath::IntVector2 castResultIntVector2(1, 2);
+	LEMath::IntVector3 castResultIntVector3(1, 2, 4);
+	LEMath::IntVector4 castResultIntVector4(1, 2, 4, 8);
+
+	LEMath::FloatVector2 castFloatVector2(testFloatVector4_0.ToFloatVector2());
+	LEMath::FloatVector3 castFloatVector3(testFloatVector4_0.ToFloatVector3());
+	LEMath::IntVector2   castIntVector2  (testFloatVector4_0.ToIntVector2());
+	LEMath::IntVector3   castIntVector3  (testFloatVector4_0.ToIntVector3());
+	LEMath::IntVector4   castIntVector4  (testFloatVector4_0.ToIntVector4());
+		
 	EXPECT_EQ(resultPlus,     	testFloatVector4_0 + testFloatVector4_1);
 	EXPECT_EQ(resultMinus,    	testFloatVector4_0 - testFloatVector4_1);
 	EXPECT_EQ(resultMultiply, 	testFloatVector4_0 * testFloatVector4_1);
@@ -58,6 +72,12 @@ TEST_F(testLEMath, FloatVector4) {
 	EXPECT_EQ(resultDot,      	testFloatVector4_0 | testFloatVector4_1);
 	EXPECT_EQ(resultLength,	  	testFloatVector4_0.Length());
 	EXPECT_EQ(resultNormalize,	testFloatVector4_0.Normalize());
+	
+	EXPECT_EQ(castResultFloatVector2, castFloatVector2);
+	EXPECT_EQ(castResultFloatVector3, castFloatVector3);
+	EXPECT_EQ(castResultIntVector2,   castIntVector2  );
+	EXPECT_EQ(castResultIntVector3,   castIntVector3  );
+	EXPECT_EQ(castResultIntVector4,   castIntVector4  );
 }
 
 TEST_F(testLEMath, IntVector3) {

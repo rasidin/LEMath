@@ -27,6 +27,50 @@ namespace LEMath {
 
         FloatVector2& SetX(float X) { x = X; return *this; }
         FloatVector2& SetY(float Y) { y = Y; return *this; }
+		
+		// Casters
+		DataContainer ToFloatVector3() const 
+		{
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}	
+		DataContainer ToFloatVector4() const 
+		{
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}	
+		DataContainer ToIntVector2() const 
+		{
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}	
+		DataContainer ToIntVector3() const 
+		{
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}	
+		DataContainer ToIntVector4() const 
+		{
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}	
+		
+		// Opeartors
+		bool operator == (const FloatVector2 &In) const { return In.X() == x && In.Y() == y; }
+		operator DataContainer() const 
+		{
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}
+	private:
+		DataContainer& GenerateDataContainer(DataContainer &Output) const 
+		{
+			Output.DataCount = 2;
+			Output.Type = DataContainer::DataType::Float;
+			Output.fData[0] = x;
+			Output.fData[1] = y;
+			return Output;
+		}
     };
     typedef FloatVector2 FloatPoint;
 }

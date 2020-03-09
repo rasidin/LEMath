@@ -87,6 +87,28 @@ namespace LEMath {
 		static float DotProduct(const FloatVector4 &A, const FloatVector4 &B) {
 			return A.X() * B.X() + A.Y() * B.Y() + A.Z() * B.Z() + A.W() * B.W();
 		}
+
+		// Casters
+		DataContainer ToIntVector2() const {
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}
+		DataContainer ToIntVector3() const {
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}
+		DataContainer ToIntVector4() const {
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}
+		DataContainer ToFloatVector2() const {
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}
+		DataContainer ToFloatVector3() const {
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}
 		
 		// Operators
 		bool operator == (const FloatVector4 &In) const {
@@ -175,12 +197,26 @@ namespace LEMath {
 		float operator | (const FloatVector4 &In) const {
 			return DotProduct(*this, In);
 		}
+		operator DataContainer() const {
+			DataContainer output;
+			return GenerateDataContainer(output);
+		}
 		
 		void PrintLog() const { std::cout << x << ", " << y << ", " << z << ", " << w << std::endl; }
 		
 		// Default values
 		static const FloatVector4 Zero;
 		static const FloatVector4 One;
+	private:
+		DataContainer& GenerateDataContainer(DataContainer &Output) const 
+		{
+			Output.DataCount = 4;
+			Output.Type = DataContainer::DataType::Float;
+			Output.fData[0] = x;
+			Output.fData[1] = y;
+			Output.fData[2] = z;
+			Output.fData[3] = w;
+		}
 	};
 	typedef FloatVector4 FloatColorRGBA;
 }
