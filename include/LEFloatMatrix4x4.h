@@ -50,16 +50,19 @@ namespace LEMath {
 		static FloatMatrix4x4 GenerateRotationZ(float Z);
 		static FloatMatrix4x4 GenerateRotationXYZ(float RadianX, float RadianY, float RadianZ);
 		static FloatMatrix4x4 GenerateRotationXYZ(const FloatVector4 &Radian);
-		static FloatMatrix4x4 GenerateInverseRotationX(float X);
+        static FloatMatrix4x4 GenerateRotationXYZ(const DataContainer &Radian);
+        static FloatMatrix4x4 GenerateInverseRotationX(float X);
 		static FloatMatrix4x4 GenerateInverseRotationY(float Y);
 		static FloatMatrix4x4 GenerateInverseRotationZ(float Z);
 		static FloatMatrix4x4 GenerateInverseRotationXYZ(float X, float Y, float Z);
 		static FloatMatrix4x4 GenerateInverseRotationXYZ(const FloatVector4 &Radian);
 		static FloatMatrix4x4 GenerateTransform(float X, float Y, float Z);
 		static FloatMatrix4x4 GenerateTransform(const FloatVector4 &Position);
+        static FloatMatrix4x4 GenerateTransform(const DataContainer &Data);
 		static FloatMatrix4x4 GenerateScaling(float X, float Y, float Z);
 		static FloatMatrix4x4 GenerateScaling(const FloatVector4 &Scaling);
-		
+        static FloatMatrix4x4 GenerateScaling(const DataContainer &Data);
+
 		// Operators
 		bool 			operator == (const FloatMatrix4x4 &In) const;
 		FloatMatrix4x4  operator +  (const FloatMatrix4x4 &In) const;

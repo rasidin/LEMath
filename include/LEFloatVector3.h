@@ -89,6 +89,9 @@ namespace LEMath {
             z += In.Z();
             return *this;
         }
+        FloatVector3 operator - () const {
+            return FloatVector3(-x, -y, -z);
+        }
         FloatVector3 operator - (const FloatVector3 &In) const {
             return FloatVector3(x - In.X(), y - In.Y(), z - In.Z());
         }
@@ -118,6 +121,13 @@ namespace LEMath {
         }
         FloatVector3 operator ^ (const FloatVector3 &In) const {
             return CrossProduct(*this, In);
+        }
+        FloatVector3& operator ^= (const FloatVector3 &In) {
+            *this = CrossProduct(*this, In);
+            return *this;
+        }
+        float operator | (const FloatVector3 &In) const {
+            return DotProduct(*this, In);
         }
         bool operator < (const FloatVector3 &In) const {
             return x < In.X() && y < In.Y() && z < In.Z();
