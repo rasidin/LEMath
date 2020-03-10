@@ -57,7 +57,39 @@ namespace LEMath {
 		
 		// Opeartors
 		bool operator == (const FloatVector2 &In) const { return In.X() == x && In.Y() == y; }
-		operator DataContainer() const 
+        FloatVector2 operator + (const FloatVector2 &In) const {
+            return FloatVector2(x + In.X(), y + In.Y());
+        }
+        FloatVector2& operator += (const FloatVector2 &In) {
+            x += In.X();
+            y += In.Y();
+            return *this;
+        }
+        FloatVector2 operator - (const FloatVector2 &In) const {
+            return FloatVector2(x - In.X(), y - In.Y());
+        }
+        FloatVector2& operator -= (const FloatVector2 &In) {
+            x -= In.X();
+            y -= In.Y();
+            return *this;
+        }
+        FloatVector2 operator * (const FloatVector2 &In) const {
+            return FloatVector2(x * In.X(), y * In.Y());
+        }
+        FloatVector2& operator *= (const FloatVector2 &In) {
+            x *= In.X();
+            y *= In.Y();
+            return *this;
+        }
+        FloatVector2 operator / (const FloatVector2 &In) const {
+            return FloatVector2(x / In.X(), y / In.Y());
+        }
+        FloatVector2& operator /= (const FloatVector2 &In) {
+            x /= In.X();
+            y /= In.Y();
+            return *this;
+        }
+        operator DataContainer() const
 		{
 			DataContainer output;
 			return GenerateDataContainer(output);
