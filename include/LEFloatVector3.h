@@ -79,8 +79,8 @@ namespace LEMath {
 		}
 
 		// Operators
-		bool operator == (const FloatVector3 &In) const { In.X() == x && In.Y() == y && In.Z() == z; }
-        bool operator != (const FloatVector3 &In) const { In.X() != x || In.Y() != y || In.Z() != z; }
+		bool operator == (const FloatVector3 &In) const { return In.X() == x && In.Y() == y && In.Z() == z; }
+        bool operator != (const FloatVector3 &In) const { return In.X() != x || In.Y() != y || In.Z() != z; }
         FloatVector3 operator + (const FloatVector3 &In) const {
             return FloatVector3(x + In.X(), y + In.Y(), z + In.Z());
         }
