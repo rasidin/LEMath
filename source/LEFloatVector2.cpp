@@ -5,9 +5,9 @@
 #include "LEFloatVector2.h"
 
 namespace LEMath {
-    bool DataContainer::ToFloatVector2(FloatVector2 *Output) const {
+    FloatVector2* DataContainer::ToFloatVector2(FloatVector2 *Output) const {
         Output->SetX(GetFloatValue(0));
         Output->SetY(GetFloatValue(1));
-        return true;
+        return Output;
     }
 }

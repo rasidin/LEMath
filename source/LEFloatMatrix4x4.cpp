@@ -180,7 +180,7 @@ namespace LEMath {
 	}
     FloatMatrix4x4 FloatMatrix4x4::GenerateRotationXYZ(const DataContainer &In) {
         FloatVector4 Param;
-        return GenerateRotationXYZ(In.ToFloatVector4(Param).SetW(1.0f));
+        return GenerateRotationXYZ(In.ToFloatVector4(&Param)->SetW(1.0f));
     }
     FloatMatrix4x4 FloatMatrix4x4::GenerateInverseRotationX(float RadianX) {
 		float SinX = sinf(RadianX);
@@ -227,7 +227,7 @@ namespace LEMath {
 	}
     FloatMatrix4x4 FloatMatrix4x4::GenerateTransform(const DataContainer &In) {
         FloatVector4 Param;
-        return GenerateTransform(In.ToFloatVector4(Param).SetW(1.0f));
+        return GenerateTransform(In.ToFloatVector4(&Param)->SetW(1.0f));
     }
 	FloatMatrix4x4 FloatMatrix4x4::GenerateScaling(float X, float Y, float Z) {
 		return FloatMatrix4x4(
@@ -242,7 +242,7 @@ namespace LEMath {
 	}
     FloatMatrix4x4 FloatMatrix4x4::GenerateScaling(const DataContainer &In) {
         FloatVector4 Param;
-        return GenerateScaling(In.ToFloatVector4(Param).SetW(1.0f));
+        return GenerateScaling(In.ToFloatVector4(&Param)->SetW(1.0f));
     }
 
 	// Operators

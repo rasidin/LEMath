@@ -5,10 +5,10 @@
 #include "LEIntVector3.h"
 
 namespace LEMath {
-    bool DataContainer::ToIntVector3(IntVector3 *Output) const {
+    IntVector3* DataContainer::ToIntVector3(IntVector3 *Output) const {
         Output->SetX(GetIntValue(0));
         Output->SetY(GetIntValue(1));
         Output->SetZ(GetIntValue(2));
-        return true;
+        return Output;
     }
 } 

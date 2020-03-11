@@ -36,6 +36,7 @@ namespace LEMath {
             else if (Type == DataType::Float) {
                 return static_cast<int>(fData[Index]);
             }
+            return 0;
         }
         float GetFloatValue(int Index) const {
             if (IsValid() == false || Index >= DataCount) return 0.0f;
@@ -45,13 +46,14 @@ namespace LEMath {
             else if (Type == DataType::Float) {
                 return fData[Index];
             }
+            return 0.0f;
         }
 
-        bool ToIntVector2(IntVector2 *Output) const;
-        bool ToIntVector3(IntVector3 *Output) const;
-        bool ToIntVector4(IntVector4 *Output) const;
-        bool ToFloatVector2(FloatVector2 *Output) const;
-        bool ToFloatVector3(FloatVector3 *Output) const;
-        bool ToFloatVector4(FloatVector4 *Output) const;
+        IntVector2*   ToIntVector2(IntVector2 *Output) const;
+        IntVector3*   ToIntVector3(IntVector3 *Output) const;
+        IntVector4*   ToIntVector4(IntVector4 *Output) const;
+        FloatVector2* ToFloatVector2(FloatVector2 *Output) const;
+        FloatVector3* ToFloatVector3(FloatVector3 *Output) const;
+        FloatVector4* ToFloatVector4(FloatVector4 *Output) const;
     };
 }
