@@ -23,6 +23,8 @@ namespace LEMath {
 		}
 
 		// Get
+        inline float& Get(int Index) { return (Index == 0) ? x : ((Index == 1) ? y : (Index == 2) ? z : x); }
+        inline float Get(int Index) const { return (Index == 0) ? x : ((Index == 1) ? y : (Index == 2) ? z : x); }
         inline float X() const { return x; }
         inline float Y() const { return y; }
         inline float Z() const { return z; }
@@ -81,6 +83,8 @@ namespace LEMath {
 		// Operators
 		bool operator == (const FloatVector3 &In) const { return In.X() == x && In.Y() == y && In.Z() == z; }
         bool operator != (const FloatVector3 &In) const { return In.X() != x || In.Y() != y || In.Z() != z; }
+        float& operator [] (int Index) { return Get(Index); }
+        float operator [] (int Index) const { return Get(Index); }
         FloatVector3 operator + (const FloatVector3 &In) const {
             return FloatVector3(x + In.X(), y + In.Y(), z + In.Z());
         }
