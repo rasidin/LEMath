@@ -221,4 +221,5 @@ namespace LEMath {
 		}
 	};
 	typedef FloatVector4 FloatColorRGBA;
+    typedef FloatVector4 FloatRect;
 }
