@@ -178,10 +178,10 @@ namespace LEMath {
 	FloatMatrix4x4 FloatMatrix4x4::GenerateRotationXYZ(const FloatVector4 &Radian) {
 		return GenerateRotationXYZ(Radian.X(), Radian.Y(), Radian.Z());
 	}
-    FloatMatrix4x4 FloatMatrix4x4::GenerateRotationXYZ(const DataContainer &In) {
-        FloatVector4 Param;
-        return GenerateRotationXYZ(In.ToFloatVector4(&Param)->SetW(1.0f));
-    }
+    //FloatMatrix4x4 FloatMatrix4x4::GenerateRotationXYZ(const DataContainer &In) {
+    //    FloatVector4 Param;
+    //    return GenerateRotationXYZ(In.ToFloatVector4(&Param)->SetW(1.0f));
+    //}
     FloatMatrix4x4 FloatMatrix4x4::GenerateInverseRotationX(float RadianX) {
 		float SinX = sinf(RadianX);
 		float CosX = cosf(RadianX);
@@ -225,10 +225,10 @@ namespace LEMath {
 	FloatMatrix4x4 FloatMatrix4x4::GenerateTransform(const FloatVector4 &In) {
 		return GenerateTransform(In.X(), In.Y(), In.Z());
 	}
-    FloatMatrix4x4 FloatMatrix4x4::GenerateTransform(const DataContainer &In) {
-        FloatVector4 Param;
-        return GenerateTransform(In.ToFloatVector4(&Param)->SetW(1.0f));
-    }
+    //FloatMatrix4x4 FloatMatrix4x4::GenerateTransform(const DataContainer &In) {
+    //    FloatVector4 Param;
+    //    return GenerateTransform(In.ToFloatVector4(&Param)->SetW(1.0f));
+    //}
 	FloatMatrix4x4 FloatMatrix4x4::GenerateScaling(float X, float Y, float Z) {
 		return FloatMatrix4x4(
 			   X, 0.0f, 0.0f, 0.0f,
@@ -240,10 +240,10 @@ namespace LEMath {
 	FloatMatrix4x4 FloatMatrix4x4::GenerateScaling(const FloatVector4 &Scaling) {
 		return GenerateScaling(Scaling.X(), Scaling.Y(), Scaling.Z());
 	}
-    FloatMatrix4x4 FloatMatrix4x4::GenerateScaling(const DataContainer &In) {
-        FloatVector4 Param;
-        return GenerateScaling(In.ToFloatVector4(&Param)->SetW(1.0f));
-    }
+    //FloatMatrix4x4 FloatMatrix4x4::GenerateScaling(const DataContainer &In) {
+    //    FloatVector4 Param;
+    //    return GenerateScaling(In.ToFloatVector4(&Param)->SetW(1.0f));
+    //}
 
 	// Operators
 	bool FloatMatrix4x4::operator == (const FloatMatrix4x4 &In) const {

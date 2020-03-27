@@ -24,8 +24,9 @@ namespace LEMath {
 		FloatVector4() : x(0.0f), y(0.0f), z(0.0f), w(0.0f) {}
 		FloatVector4(float In) : x(In), y(In), z(In), w(In) {}
 		FloatVector4(float X, float Y, float Z, float W) : x(X), y(Y), z(Z), w(W) {}
-        FloatVector4(const DataContainer &In) : x(0.0f), y(0.0f), z(0.0f), w(0.0f) {
-            In.ToFloatVector4(this);
+        template<typename T>
+        FloatVector4(T In) {
+            ((DataContainer)In).ToFloatVector4(this);
         }
 
 		// Properties
@@ -33,10 +34,21 @@ namespace LEMath {
 		inline float Y() const { return y; }
 		inline float Z() const { return z; }
 		inline float W() const { return w; }
+        inline float Width() const { return z; }
+        inline float Height() const { return w; }
         inline float Red() const { return x; }
         inline float Green() const { return y; }
         inline float Blue() const { return z; }
         inline float Alpha() const { return w; }
+
+        DataContainer XY() const {
+            DataContainer Output;
+            Output.DataCount = 2;
+            Output.Type = DataContainer::DataType::Float;
+            Output.fData[0] = x;
+            Output.fData[1] = y;
+            return Output;
+        }
 
 		// Interface
 		FloatVector4& SetX(float X) { x = X; return *this; }
@@ -46,10 +58,10 @@ namespace LEMath {
 		
 		// Calculator (self)
 		FloatVector4& Abs() {
-			x = abs(x);
-			y = abs(y);
-			z = abs(z);
-			w = abs(w);
+			x = fabs(x);
+			y = fabs(y);
+			z = fabs(z);
+			w = fabs(w);
 			return *this;
 		}
 		FloatVector4& Sqrt() {

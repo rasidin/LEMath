@@ -18,8 +18,9 @@ namespace LEMath {
         FloatVector3() : x(0.0f), y(0.0f), z(0.0f) {}
         FloatVector3(float In) : x(In), y(In), z(In) {}
         FloatVector3(float X, float Y, float Z) : x(X), y(Y), z(Z) {}
-		FloatVector3(const DataContainer &In) : x(0.0f), y(0.0f), z(0.0f) {
-			In.ToFloatVector3(this);
+        template<typename T>
+		FloatVector3(T In) : x(0.0f), y(0.0f), z(0.0f) {
+            ((DataContainer)In).ToFloatVector3(this);
 		}
 
 		// Get
@@ -57,28 +58,6 @@ namespace LEMath {
         FloatVector3& SetX(float X) { x = X; return *this; }
         FloatVector3& SetY(float Y) { y = Y; return *this; }
         FloatVector3& SetZ(float Z) { z = Z; return *this; }
-
-		// Casters
-		DataContainer ToFloatVector2() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToFloatVector4() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToIntVector2() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToIntVector3() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToIntVector4() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
 
 		// Operators
 		bool operator == (const FloatVector3 &In) const { return In.X() == x && In.Y() == y && In.Z() == z; }
