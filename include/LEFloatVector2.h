@@ -16,8 +16,9 @@ namespace LEMath {
         FloatVector2() : x(0.0f), y(0.0f) {}
         FloatVector2(float In) : x(In), y(In) {}
         FloatVector2(float X, float Y) : x(X), y(Y) {}
-        FloatVector2(const DataContainer &In) : x(0.0f), y(0.0f) {
-            In.ToFloatVector2(this);
+        template<typename T>
+        FloatVector2(T In) : x(0.0f), y(0.0f) {
+            ((DataContainer)In).ToFloatVector2(this);
         }
 
         inline float X() const { return x; }

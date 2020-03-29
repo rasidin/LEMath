@@ -31,6 +31,14 @@ namespace LEMath {
         int W() const { return w; }
         int Width() const { return z; }
         int Height() const { return w; }
+        DataContainer Size() const {
+            DataContainer Output;
+            Output.Type = DataContainer::DataType::Integer;
+            Output.DataCount = 2;
+            Output.iData[0] = z;
+            Output.iData[1] = w;
+            return Output;
+        }
 
         void SetX(int X) { x = X; }
         void SetY(int Y) { y = Y; }
