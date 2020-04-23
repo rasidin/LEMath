@@ -35,6 +35,16 @@ namespace LEMath {
 		inline float Y() const { return y; }
 		inline float Z() const { return z; }
 		inline float W() const { return w; }
+		inline DataContainer XY() const {
+			DataContainer Out;
+			Out.DataCount = 2;
+			Out.Type = DataContainer::DataType::Float;
+			Out.fData[0] = x;
+			Out.fData[1] = y;
+			return Out;
+		}
+		inline float Width() const { return z; }
+		inline float Height() const { return w; }
         inline float Red() const { return x; }
         inline float Green() const { return y; }
         inline float Blue() const { return z; }
