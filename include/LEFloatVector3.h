@@ -3,6 +3,8 @@
 // @brief 3Dimensions Float Vector 
 // @author minseob
 #pragma once
+#include <math.h>
+
 #include "LEMathDataContainer.h"
 
 namespace LEMath {
@@ -30,11 +32,30 @@ namespace LEMath {
         FloatVector3& SetY(float Y) { y = Y; return *this; }
         FloatVector3& SetZ(float Z) { z = Z; return *this; }
 
+		// Calculator
+		FloatVector3& Normalize() {
+			float length = Length();
+			LEMATH_ASSERT(length > 0.0f);
+			x /= length;
+			y /= length;
+			z /= length;
+			return *this;
+		}
+		float Length() const {
+			LEMATH_ASSERT(!IsZero());
+			return sqrtf((*this) | (*this));
+		}		
+		
+		// Checkers
+		bool IsZero() const { return x == 0 && y == 0 && z == 0; }
+
 		// Operators
 		bool operator == (const FloatVector3 &In) const { In.X() == x && In.Y() == y && In.Z() == z; }
 		bool operator != (const FloatVector3 &In) const {
 			return x != In.X() || y != In.Y() || z != In.Z();
 		}
+		bool operator < (const FloatVector3 &In) const { return x < In.X() && y < In.Y() && z < In.Z(); }
+		bool operator > (const FloatVector3 &In) const { return x > In.X() && y > In.Y() && z > In.Z(); }
 		FloatVector3 operator + (const FloatVector3 &In) const {
 			return FloatVector3(x + In.X(), y + In.Y(), z + In.Z());
 		}
@@ -98,6 +119,9 @@ namespace LEMath {
 			y /= In;
 			z /= In;
 			return *this;
+		}
+		float operator | (const FloatVector3 &In) const {
+			return x * In.x + y * In.y + z * In.z;
 		}
         operator DataContainer() const {
             DataContainer output;
