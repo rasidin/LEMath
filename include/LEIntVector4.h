@@ -31,6 +31,14 @@ namespace LEMath {
         int W() const { return w; }
         int Width() const { return z; }
         int Height() const { return w; }
+        DataContainer Size() const {
+            DataContainer Output;
+            Output.Type = DataContainer::DataType::Integer;
+            Output.DataCount = 2;
+            Output.iData[0] = z;
+            Output.iData[1] = w;
+            return Output;
+        }
 
         void SetX(int X) { x = X; }
         void SetY(int Y) { y = Y; }
@@ -38,6 +46,19 @@ namespace LEMath {
         void SetW(int W) { w = W; }
         void SetWidth(int Width) { z = Width; }
         void SetHeight(int Height) { w = Height; }
+
+        // Caster
+        operator DataContainer() const {
+            DataContainer Output;
+            Output.DataCount = 4;
+            Output.Type = DataContainer::DataType::Integer;
+            Output.iData[0] = x;
+            Output.iData[1] = y;
+            Output.iData[2] = z;
+            Output.iData[3] = w;
+
+            return Output;
+        }
 
 		// Operators
 		IntVector4 operator + (const IntVector4 &In) const {
