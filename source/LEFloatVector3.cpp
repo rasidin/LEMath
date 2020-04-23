@@ -5,10 +5,11 @@
 #include "LEFloatVector3.h"
 
 namespace LEMath {
-    bool DataContainer::ToFloatVector3(FloatVector3 *Output) const {
-        Output->SetX(GetFloatValue(0));
-        Output->SetY(GetFloatValue(1));
-        Output->SetZ(GetFloatValue(2));
-        return true;
-    }
+	template<> DataContainer::operator FloatVector3() const {
+		return FloatVector3(
+			GetFloatValue(0),
+			GetFloatValue(1),
+			GetFloatValue(2)
+		);
+	}
 } 

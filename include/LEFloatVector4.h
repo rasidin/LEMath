@@ -25,7 +25,7 @@ namespace LEMath {
 		FloatVector4(float In) : x(In), y(In), z(In), w(In) {}
 		FloatVector4(float X, float Y, float Z, float W) : x(X), y(Y), z(Z), w(W) {}
         FloatVector4(const DataContainer &In) : x(0.0f), y(0.0f), z(0.0f), w(0.0f) {
-            In.ToFloatVector4(this);
+            *this = (FloatVector4)In;
         }
 
 		// Properties
@@ -87,29 +87,7 @@ namespace LEMath {
 		static float DotProduct(const FloatVector4 &A, const FloatVector4 &B) {
 			return A.X() * B.X() + A.Y() * B.Y() + A.Z() * B.Z() + A.W() * B.W();
 		}
-
-		// Casters
-		DataContainer ToIntVector2() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToIntVector3() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToIntVector4() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToFloatVector2() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToFloatVector3() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		
+	
 		// Operators
 		bool operator == (const FloatVector4 &In) const {
 			return x == In.X() && y == In.Y() && z == In.Z() && w == In.W();

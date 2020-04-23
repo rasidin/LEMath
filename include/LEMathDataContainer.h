@@ -8,13 +8,6 @@
 namespace LEMath {
     struct DataContainer
     {
-        friend IntVector2;
-        friend IntVector3;
-        friend IntVector4;
-        friend FloatVector2;
-        friend FloatVector3;
-        friend FloatVector4;
-
         union {
             struct { int iData[4]; };
             struct { float fData[4]; };
@@ -47,11 +40,6 @@ namespace LEMath {
             }
         }
 
-        bool ToIntVector2(IntVector2 *Output) const;
-        bool ToIntVector3(IntVector3 *Output) const;
-        bool ToIntVector4(IntVector4 *Output) const;
-        bool ToFloatVector2(FloatVector2 *Output) const;
-        bool ToFloatVector3(FloatVector3 *Output) const;
-        bool ToFloatVector4(FloatVector4 *Output) const;
+		template<typename T> operator T() const;
     };
 }

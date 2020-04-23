@@ -8,9 +8,7 @@ namespace LEMath {
     const IntVector2 IntVector2::Zero = IntVector2(0, 0);
     const IntVector2 IntVector2::One = IntVector2(1, 1);
 
-    bool DataContainer::ToIntVector2(IntVector2 *Output) const {
-        if (!Output || !IsValid()) return false;
-        Output->SetX(GetIntValue(0));
-        Output->SetY(GetIntValue(1));
-    }
+	template<> DataContainer::operator IntVector2() const {
+		return IntVector2(GetIntValue(0), GetIntValue(1));
+	}
 }

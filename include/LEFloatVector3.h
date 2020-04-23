@@ -17,7 +17,7 @@ namespace LEMath {
         FloatVector3(float In) : x(In), y(In), z(In) {}
         FloatVector3(float X, float Y, float Z) : x(X), y(Y), z(Z) {}
 		FloatVector3(const DataContainer &In) : x(0.0f), y(0.0f), z(0.0f) {
-			In.ToFloatVector3(this);
+			*this = (FloatVector3)In;
 		}
 
 		// Get

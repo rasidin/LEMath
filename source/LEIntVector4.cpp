@@ -7,10 +7,12 @@
 
 namespace LEMath
 {
-	bool DataContainer::ToIntVector4(IntVector4 *Output) const {
-		Output->SetX(GetIntValue(0));
-		Output->SetY(GetIntValue(1));
-		Output->SetZ(GetIntValue(2));
-		Output->SetW(GetIntValue(3));
+	template<> DataContainer::operator IntVector4() const {
+		return IntVector4(
+			GetIntValue(0),
+			GetIntValue(1),
+			GetIntValue(2),
+			GetIntValue(3)
+		);
 	}
 }

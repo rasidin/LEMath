@@ -16,7 +16,7 @@ namespace LEMath {
 		IntVector2(int In) : x(In), y(In) {}
 		IntVector2(int X, int Y) : x(X), y(Y) {}
         IntVector2(const DataContainer &In) {
-            In.ToIntVector2(this);
+            *this = (IntVector2)In;
         }
 
 		int X() const { return x; }
@@ -29,28 +29,6 @@ namespace LEMath {
         void SetHeight(int Height) { height = Height; }
 
         int Size() const { return x*y; }
-
-		// Casters
-		DataContainer ToIntVector3() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToIntVector4() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToFloatVector2() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToFloatVector3() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToFloatVector4() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
 
 		// Operators
 		bool operator == (const IntVector2 &In) const { return In.X() == x && In.Y() == y; }

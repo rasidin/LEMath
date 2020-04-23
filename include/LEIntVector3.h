@@ -20,7 +20,7 @@ namespace LEMath {
 		IntVector3() : x(0), y(0), z(0) {}
 		IntVector3(int _x, int _y, int _z) : x(_x), y(_y), z(_z) {}
 		IntVector3(const DataContainer &In) : x(0), y(0), z(0) {
-			In.ToIntVector3(this);
+			*this = (IntVector3)In;
 		}
 
         DataContainer XY() const { DataContainer output; output.Type = DataContainer::DataType::Integer; output.iData[0] = x; output.iData[1] = y; output.DataCount = 2; return output; }

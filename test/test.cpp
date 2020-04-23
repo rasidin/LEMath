@@ -56,11 +56,11 @@ TEST_F(testLEMath, FloatVector4) {
 	LEMath::IntVector3 castResultIntVector3(1, 2, 4);
 	LEMath::IntVector4 castResultIntVector4(1, 2, 4, 8);
 
-	LEMath::FloatVector2 castFloatVector2(testFloatVector4_0.ToFloatVector2());
-	LEMath::FloatVector3 castFloatVector3(testFloatVector4_0.ToFloatVector3());
-	LEMath::IntVector2   castIntVector2  (testFloatVector4_0.ToIntVector2());
-	LEMath::IntVector3   castIntVector3  (testFloatVector4_0.ToIntVector3());
-	LEMath::IntVector4   castIntVector4  (testFloatVector4_0.ToIntVector4());
+	LEMath::FloatVector2 castFloatVector2(testFloatVector4_0);
+	LEMath::FloatVector3 castFloatVector3(testFloatVector4_0);
+	LEMath::IntVector2   castIntVector2  (testFloatVector4_0);
+	LEMath::IntVector3   castIntVector3  (testFloatVector4_0);
+	LEMath::IntVector4   castIntVector4  (testFloatVector4_0);
 		
 	EXPECT_EQ(resultPlus,     	testFloatVector4_0 + testFloatVector4_1);
 	EXPECT_EQ(resultMinus,    	testFloatVector4_0 - testFloatVector4_1);

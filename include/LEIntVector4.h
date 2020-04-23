@@ -21,7 +21,7 @@ namespace LEMath {
 		IntVector4() : x(0), y(0), z(0), w(0) {}
 		IntVector4(int _x, int _y, int _z, int _w) : x(_x), y(_y), z(_z), w(_w) {}
 		IntVector4(const DataContainer &In) : x(0), y(0), z(0), w(0) {
-			In.ToIntVector4(this);
+			*this = (IntVector4)In;
 		}
 
         // Get & Set

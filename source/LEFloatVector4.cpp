@@ -8,11 +8,12 @@ namespace LEMath {
 	const FloatVector4 FloatVector4::Zero = FloatVector4(0.0f, 0.0f, 0.0f, 0.0f);
 	const FloatVector4 FloatVector4::One  = FloatVector4(1.0f, 1.0f, 1.0f, 1.0f);
 
-    bool DataContainer::ToFloatVector4(FloatVector4 *Output) const {
-        Output->SetX(GetFloatValue(0));
-        Output->SetY(GetFloatValue(1));
-        Output->SetZ(GetFloatValue(2));
-        Output->SetW(GetFloatValue(3));
-        return true;
-    }
+	template<> DataContainer::operator FloatVector4() const {
+		return FloatVector4(
+			GetFloatValue(0),
+			GetFloatValue(1),
+			GetFloatValue(2),
+			GetFloatValue(3)
+		);
+	}
 } 
