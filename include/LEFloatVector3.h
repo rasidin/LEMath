@@ -32,6 +32,73 @@ namespace LEMath {
 
 		// Operators
 		bool operator == (const FloatVector3 &In) const { In.X() == x && In.Y() == y && In.Z() == z; }
+		bool operator != (const FloatVector3 &In) const {
+			return x != In.X() || y != In.Y() || z != In.Z();
+		}
+		FloatVector3 operator + (const FloatVector3 &In) const {
+			return FloatVector3(x + In.X(), y + In.Y(), z + In.Z());
+		}
+		FloatVector3& operator += (const FloatVector3 &In) {
+			x += In.X();
+			y += In.Y();
+			z += In.Z();
+			return *this;
+		}
+		FloatVector3 operator - () const {
+			return FloatVector3(-x, -y, -z);
+		}
+		FloatVector3 operator - (const FloatVector3 &In) const {
+			return FloatVector3(x - In.X(), y - In.Y(), z - In.Z());
+		}
+		FloatVector3& operator -= (const FloatVector3 &In) {
+			x -= In.X();
+			y -= In.Y();
+			z -= In.Z();
+			return *this;
+		}
+		FloatVector3 operator * (const FloatVector3 &In) const {
+			return FloatVector3(x * In.X(), y * In.Y(), z * In.Z());
+		}
+		FloatVector3& operator *= (const FloatVector3 &In) {
+			x *= In.X();
+			y *= In.Y();
+			z *= In.Z();
+			return *this;
+		}
+		FloatVector3 operator * (float In) const {
+			return FloatVector3(x * In, y * In, z * In);
+		}
+		FloatVector3& operator *= (float In) {
+			x *= In;
+			y *= In;
+			z *= In;
+			return *this;
+		}
+		friend FloatVector3 operator * (float Scale, const FloatVector3 &In) {
+			return In.operator*(Scale);
+		}
+		FloatVector3 operator / (const FloatVector3 &In) const {
+			LEMATH_ASSERT(In.X() != 0 && In.Y() != 0 && In.Z() != 0);
+			return FloatVector3(x / In.X(), y / In.Y(), z / In.Z());
+		}
+		FloatVector3& operator /= (const FloatVector3 &In) {
+			LEMATH_ASSERT(In.X() != 0 && In.Y() != 0 && In.Z() != 0);
+			x /= In.X();
+			y /= In.Y();
+			z /= In.Z();
+			return *this;
+		}
+		FloatVector3 operator / (float In) const {
+			LEMATH_ASSERT(In != 0);
+			return FloatVector3(x / In, y / In, z / In);
+		}
+		FloatVector3& operator /= (float In) {
+			LEMATH_ASSERT(In != 0);
+			x /= In;
+			y /= In;
+			z /= In;
+			return *this;
+		}
         operator DataContainer() const {
             DataContainer output;
 			return GenerateDataContainer(output);
