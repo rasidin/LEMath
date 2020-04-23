@@ -62,6 +62,10 @@ namespace LEMath {
 			DataContainer output;
 			return GenerateDataContainer(output);
 		}
+
+		// Default values
+		static const FloatVector2 Zero;
+		static const FloatVector2 One;
 	private:
 		DataContainer& GenerateDataContainer(DataContainer &Output) const 
 		{
