@@ -29,6 +29,7 @@ namespace LEMath {
             else if (Type == DataType::Float) {
                 return static_cast<int>(fData[Index]);
             }
+			return 0;
         }
         float GetFloatValue(int Index) const {
             if (IsValid() == false || Index >= DataCount) return 0.0f;
@@ -38,6 +39,7 @@ namespace LEMath {
             else if (Type == DataType::Float) {
                 return fData[Index];
             }
+			return 0;
         }
 
 		template<typename T> operator T() const;

@@ -206,6 +206,7 @@ namespace LEMath {
 			Output.fData[1] = y;
 			Output.fData[2] = z;
 			Output.fData[3] = w;
+			return Output;
 		}
 	};
 	typedef FloatVector4 FloatColorRGBA;
