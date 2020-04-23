@@ -30,28 +30,6 @@ namespace LEMath {
         FloatVector3& SetY(float Y) { y = Y; return *this; }
         FloatVector3& SetZ(float Z) { z = Z; return *this; }
 
-		// Casters
-		DataContainer ToFloatVector2() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToFloatVector4() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToIntVector2() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToIntVector3() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-		DataContainer ToIntVector4() const {
-			DataContainer output;
-			return GenerateDataContainer(output);
-		}
-
 		// Operators
 		bool operator == (const FloatVector3 &In) const { In.X() == x && In.Y() == y && In.Z() == z; }
         operator DataContainer() const {
