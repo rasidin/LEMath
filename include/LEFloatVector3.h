@@ -137,6 +137,9 @@ namespace LEMath {
 		float operator | (const FloatVector3 &In) const {
 			return x * In.x + y * In.y + z * In.z;
 		}
+		FloatVector3 operator ^ (const FloatVector3 &In) const {
+			return FloatVector3(Y() * In.Z() - Z() * In.Y(), Z() * In.X() - X() * In.Z(), X() * In.Y() - Y() * In.X());
+		}
         operator DataContainer() const {
             DataContainer output;
 			return GenerateDataContainer(output);
