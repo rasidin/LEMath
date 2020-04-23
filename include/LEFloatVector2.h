@@ -109,4 +109,5 @@ namespace LEMath {
 		}
     };
     typedef FloatVector2 FloatPoint;
+    typedef FloatVector2 FloatSize;
 }
