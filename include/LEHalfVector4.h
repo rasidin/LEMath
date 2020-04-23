@@ -22,6 +22,10 @@ namespace LEMath {
 			z = ToHalf(Z);
 			w = ToHalf(W);
 		}
+		HalfVector4(const DataContainer &Container)
+		{
+			*this = (HalfVector4)Container;
+		}
 		
 		inline float X() const { return ToFloat(x); }
 		inline float Y() const { return ToFloat(y); }
