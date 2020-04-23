@@ -14,6 +14,7 @@ namespace LEMath {
 		};
 	public:
 		HalfVector4() : x(0u), y(0u), z(0u), w(0u) {}
+		HalfVector4(half X, half Y, half Z, half W) : x(X), y(Y), z(Z), w(W) {}
 		HalfVector4(float X, float Y, float Z, float W) 
 		{
 			x = ToHalf(X);
