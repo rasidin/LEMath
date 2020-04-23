@@ -22,9 +22,12 @@ namespace LEMath {
 			z = ToHalf(Z);
 			w = ToHalf(W);
 		}
-		HalfVector4(const DataContainer &Container)
+		HalfVector4(const DataContainer &In)
 		{
-			*this = (HalfVector4)Container;
+			x = ToHalf(In.GetFloatValue(0));
+			y = ToHalf(In.GetFloatValue(1));
+			z = ToHalf(In.GetFloatValue(2));
+			w = ToHalf(In.GetFloatValue(3));
 		}
 		
 		inline float X() const { return ToFloat(x); }

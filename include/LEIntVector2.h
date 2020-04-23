@@ -15,9 +15,7 @@ namespace LEMath {
 		IntVector2() : x(0), y(0) {}
 		IntVector2(int In) : x(In), y(In) {}
 		IntVector2(int X, int Y) : x(X), y(Y) {}
-        IntVector2(const DataContainer &In) {
-            *this = (IntVector2)In;
-        }
+        IntVector2(const DataContainer &In) : x(In.GetIntValue(0)), y(In.GetIntValue(1)) {}
 
 		int X() const { return x; }
 		int Y() const { return y; }

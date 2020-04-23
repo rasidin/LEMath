@@ -20,8 +20,12 @@ namespace LEMath {
 		// Constructors
 		IntVector4() : x(0), y(0), z(0), w(0) {}
 		IntVector4(int _x, int _y, int _z, int _w) : x(_x), y(_y), z(_z), w(_w) {}
-		IntVector4(const DataContainer &In) : x(0), y(0), z(0), w(0) {
-			*this = (IntVector4)In;
+		IntVector4(const DataContainer &In) 
+		: x(In.GetIntValue(0))
+		, y(In.GetIntValue(1))
+		, z(In.GetIntValue(2))
+		, w(In.GetIntValue(3)) 
+		{
 		}
 
         // Get & Set

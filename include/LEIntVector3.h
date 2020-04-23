@@ -19,9 +19,7 @@ namespace LEMath {
 	public:
 		IntVector3() : x(0), y(0), z(0) {}
 		IntVector3(int _x, int _y, int _z) : x(_x), y(_y), z(_z) {}
-		IntVector3(const DataContainer &In) : x(0), y(0), z(0) {
-			*this = (IntVector3)In;
-		}
+		IntVector3(const DataContainer &In) : x(In.GetIntValue(0)), y(In.GetIntValue(1)), z(In.GetIntValue(2)) {}
 
         DataContainer XY() const { DataContainer output; output.Type = DataContainer::DataType::Integer; output.iData[0] = x; output.iData[1] = y; output.DataCount = 2; return output; }
         DataContainer YZ() const { DataContainer output; output.Type = DataContainer::DataType::Integer; output.iData[0] = y; output.iData[1] = z; output.DataCount = 2; return output; }

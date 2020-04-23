@@ -18,9 +18,7 @@ namespace LEMath {
         FloatVector3() : x(0.0f), y(0.0f), z(0.0f) {}
         FloatVector3(float In) : x(In), y(In), z(In) {}
         FloatVector3(float X, float Y, float Z) : x(X), y(Y), z(Z) {}
-		FloatVector3(const DataContainer &In) : x(0.0f), y(0.0f), z(0.0f) {
-			*this = (FloatVector3)In;
-		}
+		FloatVector3(const DataContainer &In) : x(In.GetFloatValue(0)), y(In.GetFloatValue(1)), z(In.GetFloatValue(2)) {}
 
 		// Get
         inline float X() const { return x; }
