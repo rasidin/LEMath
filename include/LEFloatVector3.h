@@ -70,6 +70,12 @@ namespace LEMath {
 		}
 		bool operator < (const FloatVector3 &In) const { return x < In.X() && y < In.Y() && z < In.Z(); }
 		bool operator > (const FloatVector3 &In) const { return x > In.X() && y > In.Y() && z > In.Z(); }
+		float operator [] (int n) const {
+			if (n==0) return x;
+			else if (n==1) return y;
+			else if (n==2) return z;
+			else return 0;
+		}
 		FloatVector3 operator + (const FloatVector3 &In) const {
 			return FloatVector3(x + In.X(), y + In.Y(), z + In.Z());
 		}
