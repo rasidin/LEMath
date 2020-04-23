@@ -45,6 +45,20 @@ namespace LEMath {
 			LEMATH_ASSERT(!IsZero());
 			return sqrtf((*this) | (*this));
 		}		
+		FloatVector3 Minimum(const FloatVector3 &In) { 
+			return FloatVector3(
+				(x < In.x)?x:In.x,
+				(y < In.y)?y:In.y,
+				(z < In.z)?z:In.z
+			);
+		}
+		FloatVector3 Maximum(const FloatVector3 &In) { 
+			return FloatVector3(
+				(x > In.x)?x:In.x,
+				(y > In.y)?y:In.y,
+				(z > In.z)?z:In.z
+			);
+		}
 		
 		// Checkers
 		bool IsZero() const { return x == 0 && y == 0 && z == 0; }
