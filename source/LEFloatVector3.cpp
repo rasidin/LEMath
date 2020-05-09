@@ -1,6 +1,6 @@
 // ===========================================================
 // LEFloatVector3.cpp
-// @brief 4Dimensions Float Vector 
+// @brief 3Dimensions Float Vector 
 // @author minseob
 #include "LEFloatVector3.h"
 
