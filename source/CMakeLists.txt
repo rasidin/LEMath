@@ -5,6 +5,7 @@ add_library(LEMath STATIC
 	LEFloatVector2.cpp
 	LEFloatVector3.cpp
 	LEFloatVector4.cpp 
+	LEHalfVector2.cpp
 	LEHalfVector4.cpp
 	LEQuaternion.cpp 
 	LEFloatMatrix4x4.cpp)
