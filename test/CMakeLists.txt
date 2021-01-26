@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 3.1)
 
+project(LEMathTest)
+
 set(GTEST_WORKING_DIRECTORY "${CMAKE_BINARY_DIR}/googletest-download")
 file(REMOVE "${GTEST_WORKING_DIRECTORY}/CMakeCache.txt")
 configure_file("${CMAKE_SOURCE_DIR}/googletest.cmake" "${GTEST_WORKING_DIRECTORY}/CMakeLists.txt")
