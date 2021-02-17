@@ -20,7 +20,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ----------------------------------------------------------------------
 @file LEMathDataContainer.h
 @brief Data containers
-@author minseob (leeminseob@outlook.com)
+@author minseob (https://github.com/rasidin)
 **********************************************************************/
 #ifndef LEMATH_LEMATHDATACONTAINER_H_
 #define LEMATH_LEMATHDATACONTAINER_H_

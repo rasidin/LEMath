@@ -20,7 +20,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ----------------------------------------------------------------------
 @file LEFloatMatrix3x3.h
 @brief Float matrix 3 by 3
-@author minseob (leeminseob@outlook.com)
+@author minseob (https://github.com/rasidin)
 **********************************************************************/
 #ifndef LEMATH_LEFLOATMATRIX3X3_H_
 #define LEMATH_LEFLOATMATRIX3X3_H_

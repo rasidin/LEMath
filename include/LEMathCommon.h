@@ -20,7 +20,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ----------------------------------------------------------------------
 @file LEMathCommon.h
 @brief Common definitions
-@author minseob (leeminseob@outlook.com)
+@author minseob (https://github.com/rasidin)
 **********************************************************************/
 #ifndef LEMATH_LEMATHCOMMON_H_
 #define LEMATH_LEMATHCOMMON_H_

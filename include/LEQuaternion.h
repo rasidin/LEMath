@@ -20,7 +20,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ----------------------------------------------------------------------
 @file LEQuaternion.h
 @brief Quaternion
-@author minseob (leeminseob@outlook.com)
+@author minseob (https://github.com/rasidin)
 **********************************************************************/
 #ifndef LEMATH_LEQUATERNION_H_
 #define LEMATH_LEQUATERNION_H_

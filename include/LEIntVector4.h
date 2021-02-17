@@ -20,7 +20,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ----------------------------------------------------------------------
 @file LEIntVector4.h
 @brief 4 dimensions integer vector
-@author minseob (leeminseob@outlook.com)
+@author minseob (https://github.com/rasidin)
 **********************************************************************/
 #ifndef LEMATH_LEINTVECTOR4_H_
 #define LEMATH_LEINTVECTOR4_H_

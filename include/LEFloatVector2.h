@@ -20,7 +20,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ----------------------------------------------------------------------
 @file LEFloatVector2.h
 @brief 2 dimensions float vector
-@author minseob (leeminseob@outlook.com)
+@author minseob (https://github.com/rasidin)
 **********************************************************************/
 #ifndef LEMATH_LEFLOATVECTOR2_H_
 #define LEMATH_LEFLOATVECTOR2_H_

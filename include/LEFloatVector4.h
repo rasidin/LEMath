@@ -20,7 +20,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ----------------------------------------------------------------------
 @file LEFloatVector4.h
 @brief 4 dimensions float vector
-@author minseob (leeminseob@outlook.com)
+@author minseob (https://github.com/rasidin)
 **********************************************************************/
 #ifndef LEMATH_LEFLOATVECTOR4_H_
 #define LEMATH_LEFLOATVECTOR4_H_

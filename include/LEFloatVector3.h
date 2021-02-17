@@ -20,7 +20,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ----------------------------------------------------------------------
 @file LEFloatVector3.h
 @brief 3 dimensions float vector
-@author minseob (leeminseob@outlook.com)
+@author minseob (https://github.com/rasidin)
 **********************************************************************/
 #ifndef LEMATH_LEFLOATVECTOR3_H_
 #define LEMATH_LEFLOATVECTOR3_H_

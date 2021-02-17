@@ -20,7 +20,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ----------------------------------------------------------------------
 @file LEFloatMatrix4x4.h
 @brief Float matrix 4 by 4
-@author minseob (leeminseob@outlook.com)
+@author minseob (https://github.com/rasidin)
 **********************************************************************/
 #ifndef LEMATH_LEFLOATMATRIX4X4_H_
 #define LEMATH_LEFLOATMATRIX4X4_H_

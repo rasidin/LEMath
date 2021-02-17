@@ -20,7 +20,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ----------------------------------------------------------------------
 @file LEMathPlatform.h
 @brief Platform definitions
-@author minseob (leeminseob@outlook.com)
+@author minseob (https://github.com/rasidin)
 **********************************************************************/
 #ifndef LEMATH_LEMATHPLATFORM_H_
 #define LEMATH_LEMATHPLATFORM_H_

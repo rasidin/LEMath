@@ -20,7 +20,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ----------------------------------------------------------------------
 @file LEHalfVector4.h
 @brief 4 dimensions half vector
-@author minseob (leeminseob@outlook.com)
+@author minseob (https://github.com/rasidin)
 **********************************************************************/
 #ifndef LEMATH_LEHALFVECTOR4_H_
 #define LEMATH_LEHALFVECTOR4_H_

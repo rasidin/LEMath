@@ -20,7 +20,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ----------------------------------------------------------------------
 @file LEHalfVector2.h
 @brief 2 dimensions half vector
-@author minseob (leeminseob@outlook.com)
+@author minseob (https://github.com/rasidin)
 **********************************************************************/
 #ifndef LEMATH_LEHALFVECTOR2_H_
 #define LEMATH_LEHALFVECTOR2_H_

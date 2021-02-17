@@ -20,7 +20,7 @@ OTHER DEALINGS IN THE SOFTWARE.
 ----------------------------------------------------------------------
 @file LEIntVector3.h
 @brief 3 dimensions integer vector
-@author minseob (leeminseob@outlook.com)
+@author minseob (https://github.com/rasidin)
 **********************************************************************/
 #ifndef LEMATH_LEINTVECTOR3_H_
 #define LEMATH_LEINTVECTOR3_H_
