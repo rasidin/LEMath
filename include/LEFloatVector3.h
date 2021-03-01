@@ -78,9 +78,23 @@ namespace LEMath {
 				(z > In.z)?z:In.z
 			);
 		}
-		
+		inline FloatVector3 CrossProduct(const FloatVector3& In) const {
+			return CrossProduct(*this, In);
+		}
+		inline float DotProduct(const FloatVector3& In) const {
+			return DotProduct(*this, In);
+		}
+
 		// Checkers
 		bool IsZero() const { return x == 0 && y == 0 && z == 0; }
+
+		// Calculators (static)
+		static inline FloatVector3 CrossProduct(const FloatVector3& A, const FloatVector3& B) {
+			return FloatVector3(A.Y() * B.Z() - A.Z() * B.Y(), A.Z() * B.X() - A.X() * B.Z(), A.X() * B.Y() - A.Y() * B.X());
+		}
+		static inline float DotProduct(const FloatVector3& A, const FloatVector3& B) {
+			return A.X() * B.X() + A.Y() * B.Y() + A.Z() * B.Z();
+		}
 
 		// Operators
 		bool operator == (const FloatVector3 &In) const { return In.X() == x && In.Y() == y && In.Z() == z; }
@@ -163,7 +177,7 @@ namespace LEMath {
 			return x * In.x + y * In.y + z * In.z;
 		}
 		FloatVector3 operator ^ (const FloatVector3 &In) const {
-			return FloatVector3(Y() * In.Z() - Z() * In.Y(), Z() * In.X() - X() * In.Z(), X() * In.Y() - Y() * In.X());
+			return CrossProduct(*this, In);
 		}
         operator DataContainer() const {
             DataContainer output;
